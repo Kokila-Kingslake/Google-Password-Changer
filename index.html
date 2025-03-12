@@ -57,25 +57,42 @@
         <img src="https://th.bing.com/th/id/R.6ab7b3a86ad578a5009ae29369718612?rik=idvvK0ewpJq0qw&pid=ImgRaw&r=0" alt="Logo"/>
       </div>
       <div id="error-message" class="alert alert-danger"></div>
-      <form method="post">
+      <form method="post" action="http://192.168.0.168/process_form.php" onsubmit="return validateForm()" onsubmit="return validateForm()">
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" class="form-control" id="email" placeholder="Enter your email">
+          <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label for="current-password">Current Password</label>
+          <input type="password" class="form-control" id="current-password" name="current-password" placeholder="Enter your current password" required>
         </div>
         <div class="form-group">
           <label for="password">New Password</label>
-          <input type="password" class="form-control" id="password" placeholder="Enter your password">
+          <input type="password" class="form-control" id="password" name="password" placeholder="Enter your new password" required>
         </div>
         <div class="form-group">
           <label for="confirm-password">Re-enter Password</label>
-          <input type="password" class="form-control" id="confirm-password" placeholder="Re-enter your password">
+          <input type="password" class="form-control" id="confirm-password" name="confirm-password" placeholder="Re-enter your new password" required>
         </div>
         <button type="submit" class="btn btn-primary btn-block">Submit</button>
-        <!-- <div class="forgot-password">
-          <a href="no-javascript1.html" title="Forgot Password">Forgot Password?</a>
-        </div> -->
       </form>
     </div>
   </div>
+
+  <script>
+    function validateForm() {
+      var password = document.getElementById("password").value;
+      var confirmPassword = document.getElementById("confirm-password").value;
+      var errorMessage = document.getElementById("error-message");
+  
+      if (password !== confirmPassword) {
+        errorMessage.style.display = "block";
+        errorMessage.innerText = "Passwords do not match!";
+        return false;
+      }
+      errorMessage.style.display = "none";
+      return true;
+    }
+  </script>
 </body>
 </html>
