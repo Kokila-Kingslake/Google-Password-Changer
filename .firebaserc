@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "queenlake-test",
+    "staging": "queenlake-test"
+  },
+  "targets": {},
+  "etags": {}
+}
