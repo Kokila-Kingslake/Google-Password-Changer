@@ -10,5 +10,5 @@ Login to your account
 If you have any questions, please contact IT Support. Remember, never share your password with anyone.
 
 Best regards,
-IT Security Team
+IT Security Team,
 Kingslake
