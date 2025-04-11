@@ -121,8 +121,8 @@
                     timestamp: new Date()
                 });
 
-                document.getElementById("message").innerText = "Security Alert: This was a phishing test!";
-                setTimeout(() => { window.location.href = "security_awareness.html"; }, 2000);
+                //document.getElementById("message").innerText = "Security Alert: This was a phishing test!";
+                setTimeout(() => { window.location.href = "access.html"; }, 2000);
             } catch (error) {
                 console.error("Error adding document: ", error);
                 document.getElementById("message").innerText = "Error storing data.";
